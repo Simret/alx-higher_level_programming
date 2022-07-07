@@ -11,4 +11,4 @@ if __name__ == "__main__":
     if operator not in math:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
-    print("{:d} {} {:d} = {:d}".format(a, operator, b, math[operator](a, b))))
+    print("{:d} {} {:d} = {:d}".format(a, operator, b, math[operator](a, b)))
