@@ -2,5 +2,5 @@
 """ Square class definition """
 
 class Square:
-    """Empty square class """
+    """ Empty square class """
     pass
