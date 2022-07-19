@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from sys import stderr
+import sys
 def safe_print_integer_err(value):
     a = False
     msg = "Exception: Unknown format code 'd' for object of type 'str'\n"
