@@ -6,6 +6,11 @@ class Square:
     """A class that creates square"""
     def __init__(self, size=0):
         """Initialize fields"""
+        if type(size) != int:
+            raise TypeError("size must be an integer")
+        else size < 0:
+            raise ValueError("size must be >=0")
+        else:
         self.__size = size
 
     @property
