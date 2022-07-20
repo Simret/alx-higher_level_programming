@@ -48,8 +48,8 @@ class Square:
         """Print square"""
         if self.size != 0:
             for square_p in range(0, self.__position[1]):
-                print("")
+                print('')
             for square_s in range(0, self.size):
                 print('{}{}'.format(' ' * self.__position[0], '#'*self.__size))
         else:
-            print("")
+            print('')
