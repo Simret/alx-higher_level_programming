@@ -6,11 +6,6 @@ class Square:
     """A class that creates square"""
     def __init__(self, size=0):
         """Initialize fields"""
-        if type(size) != int:
-            raise TypeError("size must be an integer")
-        else size < 0:
-            raise ValueError("size must be >=0")
-        else:
         self.__size = size
 
     @property
@@ -35,7 +30,8 @@ class Square:
     def my_print(self):
         """Print square"""
         if self.__size != 0:
-            for square in range(self.__size):
-                print('#' * self.size)
+            for x in range(self.__size):
+                for n in range(self.__size):
+                    print('#', end='')
             else:
                 print("")
