@@ -8,44 +8,45 @@ class Square:
         """Initialize size"""
         self.size = size
 
-    def area(self):
-        """Calculate area of square"""
-        return (self.__size * self.__size)
-
     @property
     def size(self):
-        """Getter methode"""
+        """Getter method"""
         return self.__size
 
     @size.setter
     def size(self, value)
         """Set size"""
-        if (type(value) is not int):
+        if not isinstance (value, int):
             raise TypeError("size must be an integer")
-        if value < 0:
+        elif value < 0:
             raise ValueError("size must be >= 0")
-        self.__size = value
+        else:
+            self.__size = value
+
+    def area(self):
+        """Area of the square"""
+        return self.__size * self.__size
 
     def __eq__(self, other):
         """Equal"""
-        return self.size == other.size
+        return self.area() == other.area()
 
     def __ne__(self, other):
         """Not Equal"""
-        return self.size != other.size
+        return self.area() != other.area()
 
     def __lt__(self, other):
         """Less than"""
-        return self.size < other.size
+        return self.area() < other.area()
 
     def __le__(self, other):
         """Less than or equal"""
-        return self.size <= other.size
+        return self.area() <= other.area()
 
     def __gt__(self, other):
         """Greater than"""
-        return self.size > other.size
+        return self.area() > other.area()
 
     def __ge__(self, other):
         """Greater than or equal"""
-        return self.size >= other.size 
+        return self.area() >= other.area() 
