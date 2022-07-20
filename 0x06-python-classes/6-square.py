@@ -45,12 +45,11 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
-        """Print the square"""
-        lf.__size == 0:
-            print("")
-            return
-        [print("") for i in range(0, self.__position[1])]
-        for in range(0, self.__size):
-            [print(" ", end="") for j in range(0, self.__position[0])]
-            [print("#", end="") for k in range(0, self.__size)]
+        """Print square"""
+        if self.size != 0:
+            for square_p in range(0, self.__position[1]):
+                print("")
+            for square_s in range(0, self.size):
+                print('{}{}'.format(' ' * self.__position[0], '#'*self.__size))
+        else:
             print("")
