@@ -6,12 +6,17 @@ class Square:
     """Initialize fields"""
     def __init__(self, size=0):
         """Initialize size"""
-        self.size = size
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.size = size
 
     @property
     def size(self):
         """Getter method"""
-        return self.__size
+        return (self.__size)
 
     @size.setter
     def size(self, value)
@@ -25,28 +30,28 @@ class Square:
 
     def area(self):
         """Area of the square"""
-        return self.__size * self.__size
+        return (self.__size ** 2)
 
     def __eq__(self, other):
         """Equal"""
-        return self.area() == other.area()
+        return (self.area() == other.area())
 
     def __ne__(self, other):
         """Not Equal"""
-        return self.area() != other.area()
+        return (self.area() != other.area())
 
     def __lt__(self, other):
         """Less than"""
-        return self.area() < other.area()
+        return (self.area() < other.area())
 
     def __le__(self, other):
         """Less than or equal"""
-        return self.area() <= other.area()
+        return (self.area() <= other.area())
 
     def __gt__(self, other):
         """Greater than"""
-        return self.area() > other.area()
+        return (self.area() > other.area())
 
     def __ge__(self, other):
         """Greater than or equal"""
-        return self.area() >= other.area() 
+        return (self.area() >= other.area()) 
