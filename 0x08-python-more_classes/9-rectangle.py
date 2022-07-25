@@ -4,28 +4,27 @@
 
 
 class Rectangle:
-    """Represent a rectangle.
+    """A class that represents a rectangle
     Attributes:
-        number_of_instances (int): The number of Rectangle instances.
+        number_of_instances (int): The number of rectangle instances.
         print_symbol (any): The symbol used for string representation.
     """
-
     number_of_instances = 0
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        """Initialize a new Rectangle.
+        """A method that initializes a new rectangle
         Args:
             width (int): The width of the new rectangle.
             height (int): The height of the new rectangle.
         """
-        type(self).number_of_instances += 1
+        Rectangle.number_of_instances += 1
         self.width = width
         self.height = height
 
     @property
     def width(self):
-        """Get/set the width of the Rectangle."""
+        """Getter and setter method of the width of the rectagle"""
         return self.__width
 
     @width.setter
@@ -38,7 +37,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """Get/set the height of the Rectangle."""
+        """Getter and setter method of the height of the rectangle"""
         return self.__height
 
     @height.setter
@@ -50,18 +49,19 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """Return the area of the Rectangle."""
+        """A method that returns the area of the rectangle"""
         return (self.__width * self.__height)
 
     def perimeter(self):
-        """Return the perimeter of the Rectangle."""
+        """A method that returns the perimeter of the rectangle"""
         if self.__width == 0 or self.__height == 0:
             return (0)
         return ((self.__width * 2) + (self.__height * 2))
+     def __str__(self):
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-        """Return the Rectangle with the greater area.
+        """A static method that returns the rectangle with the greater area.
         Args:
             rect_1 (Rectangle): The first Rectangle.
             rect_2 (Rectangle): The second Rectangle.
@@ -78,14 +78,14 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        """Return a new Rectangle with width and height equal to size.
+        """A class method that returns a new rectangle with width and height equal to size.
         Args:
             size (int): The width and height of the new Rectangle.
         """
         return (cls(size, size))
 
     def __str__(self):
-        """Return the printable representation of the Rectangle.
+        """A method that returns the printable representation of the rectangle
         Represents the rectangle with the # character.
         """
         if self.__width == 0 or self.__height == 0:
@@ -99,12 +99,12 @@ class Rectangle:
         return ("".join(rect))
 
     def __repr__(self):
-        """Return the string representation of the Rectangle."""
+        """A method that returns the string representation of the rectangle"""
         rect = "Rectangle(" + str(self.__width)
         rect += ", " + str(self.__height) + ")"
         return (rect)
 
     def __del__(self):
-        """Print a message for every deletion of a Rectangle."""
+        """A method that prints a message for every deletion of a rectangle"""
         type(self).number_of_instances -= 1
         print("Bye rectangle...")
