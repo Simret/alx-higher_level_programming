@@ -4,7 +4,9 @@
 
 class Rectangle:
     """A class that defines a rectangle with attributes and methods"""
+    
     def __init__(self, width=0, height=0):
+
         """A module that initializes a new rectangle
         Args:
             width (int): The width of the new rectangle.
