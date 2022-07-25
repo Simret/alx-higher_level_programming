@@ -29,7 +29,7 @@ class Rectangle:
                 """Getter method of height"""
                 return self.height
 
-            @height.sette
+            @height.setter
             def height(self, value)
                 """Setter method of height"""
                 if type(value) != int:
@@ -38,23 +38,23 @@ class Rectangle:
                     raise ValueError("height must be >= 0")
                 self.__height = value
 
-                def area(self)
-                    """A method that returns the area of the rectangle"""
-                    return self.width * self.height
+            def area(self)
+                """A method that returns the area of the rectangle"""
+                return self.width * self.height
 
-                def perimeter(self):
-                    """A method that returns the perimeter of the rectangle"""
-                    if self.width == 0 or self.height == 0:
-                        return 0
-                    return ((self.width * 2) + (self.height * 2))
+            def perimeter(self):
+                """A method that returns the perimeter of the rectangle"""
+                if self.width == 0 or self.height == 0:
+                    return 0
+                return ((self.width * 2) + (self.height * 2))
 
-                def _str__(self):
-                    """A method that returns a printable rectangle"""
-                    rect = ""
-                    if self.height != 0 and self.width != 0:
-                        for i in range(self.height):
-                            for j in range(seelf.width):
-                                rect += "{}".format("#")
-                            if i < self.height - 1:
-                                rect += "\n"
-                    return rect
+            def _str__(self):
+                """A method that returns a printable rectangle"""
+                rect = ""
+                if self.height != 0 and self.width != 0:
+                    for i in range(self.height):
+                        for j in range(seelf.width):
+                            rect += "{}".format("#")
+                        if i < self.height - 1:
+                            rect += "\n"
+                return rect
