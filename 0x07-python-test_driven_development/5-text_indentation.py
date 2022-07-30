@@ -1,41 +1,11 @@
 #!/usr/bin/python3
 
-"""the text_indentation module"""
-
-
-
+"""A module that prints text with 2 newlines after character - . ? :"""
 
 
 def text_indentation(text):
-
-        """puts two new lines after these characters in a string: ., :, and ?
-
-            Args:
-
-                    text: the string to print
-
-                        Raises:
-
-                                TypeError: if text is not a string
-
-                                    """
-
-                                        if not isinstance(text, str):
-
-                                                    raise TypeError('text must be a string')
-
-                                                    for char in ".?:":
-
-                                                                text = (char + "\n\n").join(
-
-                                                                                    [sen.strip(" ") for sen in text.split(char)])
-
-                                                                    print(text, end="")
-
-
-
-                                                                    if __name__ == "__main__":
-
-                                                                            import doctest
-
-                                                                                doctest.testfile("tests/5-text_indentation.txt")
+    """A method that  prints text and 2 newlines"""
+    if text is None or not isinstance(text, str) or len(text) < 0:
+        raise TypeError('text must be a string')
+    string = "".join([a if a not in ".?:" else a + "\n\n" for a in text])
+    print("\n".join([x.strip() for x in string.split("\n")]), end="")
