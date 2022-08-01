@@ -7,6 +7,7 @@ BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
 class Rectangle(BaseGeometry):
     """Rectangle class with private height and width"""
+    
     def __init__(self, width, height):
         """Initialization of class"""
         self.integer_validator("width", width)
