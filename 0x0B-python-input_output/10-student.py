@@ -20,4 +20,5 @@ class Student:
                     if hasattr(self, i):
                         new_dict[i] = getattr(self, i)
                 return new_dict
+
             return self.__dict__
