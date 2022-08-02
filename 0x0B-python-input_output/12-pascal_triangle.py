@@ -5,7 +5,6 @@
 def pascal_triangle(n):
     """Arguments: n, Return"""
     lis = []
-
     if n <= 0:
         return lis
 
