@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """A module that contains a class with public instance and private getters/setters"""
 
-
 BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
 class Rectangle(BaseGeometry):
