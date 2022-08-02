@@ -20,4 +20,4 @@ class Student:
                         new_dict[i] = getattr(self, i)
                 return new_dict
 
-            return self.__dict__
+        return self.__dict__
