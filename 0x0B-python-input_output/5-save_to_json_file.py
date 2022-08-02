@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 '''A function with json representation written to file'''
-
-
 import json
 
 
