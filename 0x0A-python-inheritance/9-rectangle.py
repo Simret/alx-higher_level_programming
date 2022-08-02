@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """A class defining basegeometry"""
 
+
 class BaseGeometry:
     """Class BaseGeometry"""
 
@@ -15,9 +16,10 @@ class BaseGeometry:
         if value <= 0:
             raise ValueError("{:s} must be greater than 0".format(name))
 
+
 class Rectangle(BaseGeometry):
     """Class Rectangle that inherits from BaseGeometry"""
-
+    
     def __init__(self, width, height):
         """Initialization with width and height, both must be positive integers"""
         super().integer_validator("width", width)
