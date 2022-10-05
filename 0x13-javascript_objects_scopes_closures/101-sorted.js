@@ -5,6 +5,6 @@ for (let key in dictionary) {
   if (newdict[dictionary[key]] === undefined) {
     newdict[dictionary[key]] = [];
   }
-  newdict[dictionary[key]].push(key);
+newdict[dictionary[key]].push(key);
 }
 console.log(newdict);
