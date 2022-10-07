@@ -3,6 +3,7 @@
 
 
 if __name__ == "__main__":
+    
     from sys import argv
     import MySQLdb as sql
     data = sql.connect(user=argv[1], passwd=argv[2], db=argv[3])
