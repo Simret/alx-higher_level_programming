@@ -1,17 +1,15 @@
 #!/usr/bin/python3
 """Delete records"""
-import MySQLdb as sql
-from sys import argv
 
 
-def main(user, password, data, state):
-    data = sql.connect(host='localhost', user=user, password=password, db=data, port=3306)
+if __name__ == "__main__":
+    from sys import argv
+    import MySQLdb
+    data = MySQLdb.connect(user=argv[1], password=argv[2], db=argv[3])
     a = data.cursor()
-    a.execute("""SELECT id, name FROM states WHERE name=%s ORDER BY id;""", (state,))
+    a.execute("SELECT * FROM states WHERE name=%s ORDER BY states.id ASC;", check)
     x = a.fetchall()
     for i in x:
         print(i)
-
-
-if __name__ == '__main__':
-main(argv[1], argv[2], argv[3], argv[4])
+    a.close()
+    data.close()
