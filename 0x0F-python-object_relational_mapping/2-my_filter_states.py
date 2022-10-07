@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """List state name based on passed argument"""
-import MySQLdb as sql
+
 
 if __name__ == "__main__":
     from sys import argv
