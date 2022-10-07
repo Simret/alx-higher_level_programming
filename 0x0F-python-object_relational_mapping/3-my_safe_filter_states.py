@@ -5,9 +5,9 @@
 if __name__ == "__main__":
     from sys import argv
     import MySQLdb
-    data = MySQLdb.connect(user=argv[1], password=argv[2], db=argv[3])
+    data = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
     a = data.cursor()
-    a.execute("SELECT * FROM states WHERE name=%s ORDER BY states.id ASC;", check)
+    a.execute("SELECT * FROM states WHERE name=%s ORDER BY states.id ASC", check)
     x = a.fetchall()
     for i in x:
         print(i)
