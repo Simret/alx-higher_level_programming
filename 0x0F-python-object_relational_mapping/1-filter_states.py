@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """Filter states by name"""
-from sys import argv
 
 
 if __name__ == "__main__":
-    import MySQLdb
-    data = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
+    from sys import argv
+    import MySQLdb as sql
+    data = sql.connect(user=argv[1], passwd=argv[2], db=argv[3])
     a = data.cursor()
     a.execute("""SELECT * FROM states where name LIKE 'N%'\ ORDER BY states.id ASC")
     x = a.fetchall()
