@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """List all states"""
-import MySQLdb as sql
+import MySQLdb 
 
 
 if __name__ == "__main__":
