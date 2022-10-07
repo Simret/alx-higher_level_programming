@@ -1,18 +1,16 @@
 #!/usr/bin/python3
 """List all states"""
 import MySQLdb as sql
-from sys import argv
 
 
-def main(user, password, data):
-    """print states"""
-    data = sql.connect(host='localhost', user=user, password=password, db=data, port=3306)
-            a = data.cursor()
-            a.execute("""SELECT id, name FROM states ORDER BY id;""")
-            x = a.fetchall()
-            for i in x:
-                print(i)
-
-
-if __name__ == '__main__':
-    main(argv[1], argv[2], argv[3])
+if __name__ == "__main__":
+    from sys import argv
+    import MySQLdb
+    data = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
+    a = data.cursor()
+    a.execute("""SELECT * FROM states ORDER BY states.id ASC""")
+    x = a.fetchall()
+    for i in x:
+        print(i)
+    a.close()
+    data.close()
