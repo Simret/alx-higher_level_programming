@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""Script that prints the first state obj, takes 3 args"""
+"""Prints the first state obj, takes 3 args"""
 from sys import argv
 from model_state import State, Base
-from sqlalchemy import create_engine
+from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 
 
