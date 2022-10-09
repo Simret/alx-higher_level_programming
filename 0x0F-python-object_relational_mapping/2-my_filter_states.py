@@ -1,16 +1,18 @@
 #!/usr/bin/python3
-"""List state name based on passed argument"""
+"""list all states"""
+import MySQLdb as sql
+from sys import argv
 
 
-if __name__ == "__main__":
-    from sys import argv
-    import MySQLdb
-    data = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
+def main(user, password, data, state):
+    data = sql.connect(host='localhost', user=user, password=password, db=data, port=3306)
     a = data.cursor()
-    a.execute("SELECT * FROM states WHERE name = '{}' ORDER BY states.id ASC".format(argv[4]))
+    a.execute("SELECT id, name FROM states WHERE name = '{:s}' ORDER BY id;".format(state))
     x = a.fetchall()
     for i in x:
-        if i[1] == argv[4]:
+        if i[1] == state:
             print(i)
-    a.close()
-    data.close()
+
+
+if __name__ == '__main__':
+    main(argv[1], argv[2], argv[3], argv[4])
