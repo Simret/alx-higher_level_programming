@@ -13,4 +13,4 @@ if __name__ == "__main__":
         if i[1] == argv[4]:
             print(i)
     a.close()
-    db.close()
+    data.close()
