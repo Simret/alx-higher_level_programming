@@ -3,7 +3,7 @@
 
 
 if __name__ == "__main__":
-    
+
     from sys import argv
     from model_state import State, Base
     from sqlalchemy import create_engine
