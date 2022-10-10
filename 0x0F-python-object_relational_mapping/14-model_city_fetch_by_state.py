@@ -9,11 +9,16 @@ if __name__ == "__main__":
     from sqlalchemy import create_engine
     from sqlalchemy.orm import aliased, sessionmaker
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
-                                        argv[1], argv[2], argv[3]), pool_pre_ping=True)
+        argv[1], argv[2], argv[3]), pool_pre_ping=True)
     Session = sessionmaker()
     session = Session(bind=engine)
     Base.metadata.create_all(engine)
-    res = (session.query(State, City).filter(State.id == City.state_id).order_by(City.id).all())
+    res = (
+        session.query(
+            State,
+            City).filter(
+            State.id == City.state_id).order_by(
+                City.id).all())
     for st, cy in res:
         print("{}: ({:d}) {}".format(st.name, cy.id, cy.name))
     session.close()
