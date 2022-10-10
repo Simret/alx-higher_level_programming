@@ -1,18 +1,17 @@
 #!/usr/bin/python3
-"""list all states"""
-import MySQLdb as sql
-from sys import argv
+"""List all states"""
 
 
-def main(user, password, data, state):
-    data = sql.connect(host='localhost', user=user, password=password, db=data, port=3306)
+if __name__ == "__main__":
+    from sys import argv
+    import MySQLdb
+    data = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
     a = data.cursor()
-    a.execute("SELECT id, name FROM states WHERE name = '{:s}' ORDER BY id;".format(state))
+    a.execute(
+        "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(argv[4]))
     x = a.fetchall()
     for i in x:
-        if i[1] == state:
+        if i[1] == argv[4]:
             print(i)
-
-
-if __name__ == '__main__':
-    main(argv[1], argv[2], argv[3], argv[4])
+    a.close()
+    data.close()
