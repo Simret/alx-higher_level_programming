@@ -11,10 +11,11 @@ if __name__ == "__main__":
         argv[1], argv[2], argv[3]), pool_pre_ping=True)
     session = sessionmaker(bind=engine)
     Base.metadata.create_all(engine)
-    st = session().query(State).filter(State.name.like('%a%')).order_by(
-            State.id).all()
+    st = session().query(State).filter(
+        State.name.like('%a%')).order_by(
+        State.id).all()
     if st:
         for stat in st:
             if 'a' in stat.name:
                 print("{}: {}".format(stat.id, stat.name))
-    session().close()#!/usr/bin/python3
+    session().close()  # !/usr/bin/python3
