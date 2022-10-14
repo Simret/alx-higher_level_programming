@@ -13,7 +13,9 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     st = session().query(State).filter(State.name == argv[4]).all()
     if st:
-        print(st.id)
-    else:
-        print("not found")
-    session().close()
+        for stat in st:
+            if stat.name == argv[4]:
+                print("{}".format(stat.id))
+            else:
+                print("Not found")
+            session().close()
