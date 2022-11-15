@@ -1,6 +1,6 @@
 #!/usr/bin/node
 let request = require('request');
-let api = 'https://swapi-api.hbtn.io/api/films';
+let api = 'https://swapi-api.hbtn.io/api/films/';
 request.get(api + process.argv[2], function (err, response, body) {
   if (err) throw err;
   else if (response.statusCode === 200) {
