@@ -1,10 +1,16 @@
 #!/usr/bin/node
-let fs = require('fs');
-let request = require('request');
 
-request.get(process.argv[2], function (err, response, body) {
-  if (err) throw err;
-  else {
-    fs.writeFile(process.argv[3], body, 'utf8');
+const fs = require('fs');
+const request = require('request');
+
+request(process.argv[2], function (error, response, body) {
+  if (error) {
+    console.error('error:', error);
   }
+
+  fs.writeFile(process.argv[3], body, 'utf-8', function (error) {
+    if (error) {
+      return console.error(error);
+    }
+  });
 });
